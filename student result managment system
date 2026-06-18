@@ -1,32 +1,23 @@
-myclass = {
-    "Student_1": {
-        "name": "Diya",
-        "roll_no": 5,
-        "mark": 90
-    },
-    "Student_2": {
-        "name": "aniket",
-        "roll_no": 6,
-        "marks": 85
-    },
-    "Student_3": {
-        "name": "sourave",
-        "roll_no": 8,
-        "marks": 79
-    }
+student_marks = {
+    "aniket" : 92,
+    "parth" : 72,
+    "mankirat" : 85,
+    "diyu" : 99,
+    "yash" : 60
 }
-myclass["Student_4"] = {
-    "name": "parth",
-    "roll_no": 9,
-    "marks": 80
-}
-
-print(myclass)
-print(myclass["Student_4"])
-print(myclass["Student_4"]["name"])
-highest_marks = -1
-for student, details in myclass.items():
-    current_marks = details.get("marks", details.get("mark", 0))
-    if current_marks > highest_marks:
-        highest_marks = current_marks
-print("Highest Marks:", highest_marks)
+student_grades = {}
+for student, marks in student_marks.items():
+    if marks >= 90:
+        grade = "A"
+    elif marks >= 80:
+        grade = "B"
+    elif marks >= 70:
+        grade = "C"
+    elif marks >= 60:
+        grade = "D"
+    else:
+        grade = "F"
+    student_grades[student] = grade
+print("Student Grades:")
+for name, grade in student_grades.items():
+    print(f"{name}:{grade}")
