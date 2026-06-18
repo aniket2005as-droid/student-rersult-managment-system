@@ -1,0 +1,32 @@
+myclass = {
+    "Student_1": {
+        "name": "Diya",
+        "roll_no": 5,
+        "mark": 90
+    },
+    "Student_2": {
+        "name": "aniket",
+        "roll_no": 6,
+        "marks": 85
+    },
+    "Student_3": {
+        "name": "sourave",
+        "roll_no": 8,
+        "marks": 79
+    }
+}
+myclass["Student_4"] = {
+    "name": "parth",
+    "roll_no": 9,
+    "marks": 80
+}
+
+print(myclass)
+print(myclass["Student_4"])
+print(myclass["Student_4"]["name"])
+highest_marks = -1
+for student, details in myclass.items():
+    current_marks = details.get("marks", details.get("mark", 0))
+    if current_marks > highest_marks:
+        highest_marks = current_marks
+print("Highest Marks:", highest_marks)
